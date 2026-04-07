@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Even Odd Checker</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #43cea2, #185a9d);
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            background: rgba(0,0,0,0.2);
+        }
+
+        .container {
+            background: white;
+            width: 320px;
+            margin: 60px auto;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        input {
+            width: 95%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: linear-gradient(135deg, #43cea2, #185a9d);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .result {
+            margin-top: 15px;
+            text-align: left;
+            background: #f0f8ff;
+            padding: 10px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">EVEN ODD CHECKER</div>
+
+<div class="container">
+    <h3>Enter a Number</h3>
+
+    <input type="number" id="num" placeholder="Enter number">
+
+    <button onclick="checkNumber()">Check</button>
+
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+    function checkNumber() {
+        let n = parseInt(document.getElementById("num").value);
+
+        if (isNaN(n)) {
+            document.getElementById("result").innerHTML = "Please enter a valid number.";
+            return; 
+        }
+
+        let type = (n % 2 === 0) ? "Even" : "Odd";
+
+        let numbers = "";
+        for (let i = 1; i <= n; i++) {
+            numbers += i + " ";
+        }
+
+        document.getElementById("result").innerHTML =
+            "<strong>Number is:</strong> " + type + "<br><br>" + 
+            "<strong>Numbers from 1 to " + n + ":</strong><br>" + numbers;
+    }
+</script>
+
+</body>
+</html>
