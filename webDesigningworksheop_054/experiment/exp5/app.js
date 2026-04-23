@@ -78,3 +78,57 @@ console.log(marks); // Output: [85, 92, 78]
 let topstudents = students.filter(student => student.marks > 80);
 console.log(topstudents); 
 // Output: [{ name: "Alice", marks: 85 }, { name: "BOB", marks: 92 }]
+
+//mixed object
+let mixedobject={
+    name:"alice",
+    age:25,
+    hobbies:("reading","travelling","coding"),
+    address:{
+        street:"123 main std",
+        city:"New York",
+        country:"uSA",
+    },
+    greet: function(){
+        console.log("HELLO!");
+        let arrowGreet = () => {console.log("HI!");
+        }
+    }
+};
+console.log(mixedobject.name);
+console.log(mixedobject.age);
+console.log(mixedobject.hobbies);
+console.log(mixedobject.hobbies[0]);
+console.log(mixedobject.hobbies[1]);
+console.log(mixedobject.hobbies[2]);
+console.log(mixedobject.address);
+
+console.log(mixedobject.address.street);
+console.log(mixedobject.address.city);
+console.log(mixedobject.address.country);
+// mixedobject.address.greet();
+
+//object inside array
+
+let people = [
+  { name: "alice", age: 53 },
+  { name: "BOB", age: 34 },
+  { name: "abc", age: 45 },
+];
+console.log(people[0]);      // Output: { name: "alice", age: 53 }
+console.log(people[1].name); // Output: "BOB"
+console.log(people[2].age);  // Output: 45
+
+
+
+let company={
+    name:"TECH CORP",
+    employees:["alice","bob","charlie"]
+};
+console.log(company.name);
+console.log(company.employees);
+console.log(company.employees[0]);
+console.log(company.employees[1]);
+
+
+
